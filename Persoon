@@ -1,0 +1,9 @@
+
+public class Persoon {
+	String naam;
+	
+	Persoon(String naam){
+		
+		this.naam = naam;
+	}
+}
