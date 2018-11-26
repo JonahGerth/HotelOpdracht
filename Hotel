@@ -1,0 +1,57 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Hotel {
+
+	void Welkom(){
+		System.out.println("Welkom bij het Waldorf Astoria");
+		
+	}
+	 void KamerBoeken() {
+		
+		 ArrayList<String> GeboekteKamers = new ArrayList<String>();
+		 ArrayList<String> kamers = new ArrayList<String>(); 
+			
+			kamers.add("Een-persoonskamer");
+			kamers.add("Twee-persoonskamer");
+			kamers.add("Twee-persoonskamer");
+			kamers.add("Vier-persoonskamer");
+			kamers.add("Vier-persoonskamer");
+			
+		System.out.println("Wilt u een kamer boeken?");
+		Scanner input = new Scanner(System.in);
+		
+		if (input.nextLine() != "nee") {
+		
+			System.out.println("Oke, wat is uw naam?");
+			String naam = input.nextLine();
+			
+			System.out.println("Met hoeveel personen bent u?");
+			Persoon pers = new Persoon(naam);
+		
+			if (input.hasNextInt(1)) {
+				kamers.remove("Een-persoonskamer");
+				GeboekteKamers.add(naam+" zit in deze eenpersoonskamer");
+			}
+			if (input.hasNextInt(2)) {
+				kamers.remove("Twee-persoonskamer");
+				GeboekteKamers.add(naam+" zit in deze tweepersoonskamer");
+			}
+			if (input.hasNextInt(3)) {
+				kamers.remove("Twee-persoonskamer");
+				GeboekteKamers.add(naam+" zit in deze vierpersoonskamer");
+			} 
+			if (input.hasNextInt(4)) {
+				kamers.remove("Vier-persoonskamer");
+				GeboekteKamers.add(naam+" zit in deze vierpersoonskamer");
+			}
+			else {
+				System.out.println("Sorry " + naam + " kamers van deze grootte hebben wij niet");
+				
+			}
+			System.out.println("U heeft een kamer geboekt");
+			System.out.println(kamers);
+			System.out.println(GeboekteKamers);
+			}
+		}
+	}
